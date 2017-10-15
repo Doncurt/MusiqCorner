@@ -1,0 +1,11 @@
+
+<h1>Submission</h1>
+{{#each comments}}
+  <a href="/comments/{{this._id}}">
+    <h5>{{this.name}}</h5>
+    <small>{{this.comment}}</small>
+  </a>
+  <a href="/comments/{{this._id}}/edit">Edit</a>
+  <form method="POST" action="/comments/{{this._id}}?_method=DELETE">
+    <button type="submit">Delete</button>
+{{/each}}
