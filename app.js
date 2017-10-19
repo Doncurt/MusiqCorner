@@ -33,6 +33,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/MusicCorner');
 // model for mongoose to handle data
 var Comment = mongoose.model('Comment', {
+  video: String,
   name: String,
   comment: String
 });
