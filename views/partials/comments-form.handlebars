@@ -1,25 +1,25 @@
 <!-- Video Link-->
-<p>
+<div class="form-group">
   <label for="video">Video Link</label><br>
-  <input type="text" name="video" />
-</p>
+  <input class="form-control" type="text" name="video" value="{{comments.video}}"/>
+</div>
 
 
   <!-- Name-->
-  <p>
+  <div class="form-group">
     <label for="name">Name</label><br>
-    <input type="text" name="name" />
-  </p>
+    <input class="form-control" type="text" name="name" value="{{comments.name}}"/>
+  </div>
   <!-- TITLE -->
-  <p>
+  <div class="form-group">
     <label for="comment">Comment</label><br>
-    <input type="text" name="comment"/>
+    <input class="form-control" type="text" name="comment" value="{{comments.comment}}"/>
 
-  </p>
+  </div>
   <!-- BUTTON -->
-  <p>
-    <button type="submit">Save Comment</button>
+
+    <button  class="btn btn-primary" type="submit">Save Comment</button>
   </p>
   <p>
-    <button type="Cancel">Cancel</button>
+    <button class="btn btn-primary" type="Cancel">Cancel</button>
   </p>

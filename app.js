@@ -5,7 +5,7 @@ var methodOverride = require('method-override')
 var app = express()
 // get routes for pages, severs and other resoruces
 // OUR MOCK ARRAY OF PROJECTS
-
+var path = require("path")
 // INDEX
 
 app.get('/', function (req, res) {
@@ -27,6 +27,8 @@ var exphbs  = require('express-handlebars');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+//To use CSS template in /public
+app.use(express.static(path.join(__dirname, '/public')));
 
 //mongoose for document object maping
 var mongoose = require('mongoose');
@@ -77,3 +79,4 @@ app.delete('/comments/:id', function (req, res) {
     res.redirect('/');
   })
 })
+// helper function
