@@ -6,6 +6,8 @@ var app = express()
 // get routes for pages, severs and other resoruces
 // OUR MOCK ARRAY OF PROJECTS
 var path = require("path")
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/musiqcorner');
 // INDEX
 
 app.get('/', function (req, res) {
