@@ -6,6 +6,8 @@ var app = express()
 // get routes for pages, severs and other resoruces
 // OUR MOCK ARRAY OF PROJECTS
 var path = require("path")
+//PATH TO USE HEROKU PORT OR MY OWN DEPENDING ON SYSTEM
+var port = process.env.PORT || 3000;
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/musiqcorner');
 // INDEX
