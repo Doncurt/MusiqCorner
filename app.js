@@ -17,6 +17,14 @@ app.get('/', function (req, res) {
 app.get('/comments/new', function (req, res) {
   res.render('comments-new', {});
 })
+//New route for the about page
+app.get('/about', function (req, res) {
+  res.render('about', {});
+})
+//New route for the about page
+app.get('/contact', function (req, res) {
+  res.render('contact', {});
+})
 // listener to test that the ports are open
 app.listen(3000, function () {
   console.log('MusicCorner listening on port 3000!')

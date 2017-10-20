@@ -45,18 +45,25 @@
       </a>
     </div>
 
-<h1 class="sub-head">Submissions</h1>
+<h1 class="sub-head text-center">Submissions</h1>
+<h2 class= "text-center"> Click here to post a new comment!</h2>
+<p class ="text-center"><a href="/comments/new" class="btn btn-default navbar-btn">New Comment</a></p>
 <div class="row">
 {{#each comments}}
   <div class="col-sm-3">
     <a href="/comments/{{this._id}}">
-      <h4>{{this.video}}</h4>
+      <video width="320" height="240" controls>
+  <source src="{{this.video}}" type="video/mp4">
+  </video>
+  </a>
+    <h4>{{this.video}}</h4>
       <h5>{{this.name}}</h5>
       <small>{{this.comment}}</small>
-    </a>
-    <a href="/comments/{{this._id}}/edit">Edit</a>
+
+    <br>
+    <a class="btn btn-default navbar-btn" href="/comments/{{this._id}}/edit">Edit</a>
     <form method="POST" action="/comments/{{this._id}}?_method=DELETE">
-      <button type="submit">Delete</button>
+      <button class="btn btn-default navbar-btn" type="submit">Delete</button>
        </div>
 {{/each}}
  </div>
