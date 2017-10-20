@@ -30,7 +30,7 @@ app.get('/contact', function (req, res) {
   res.render('contact', {});
 })
 // listener to test that the ports are open
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log('MusicCorner listening on port 3000!')
 })
 
