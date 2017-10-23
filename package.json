@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,11 @@
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.10",
+    "mocha": "^4.0.1",
     "mongoose": "^4.12.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^1.0.0"
   }
 }
