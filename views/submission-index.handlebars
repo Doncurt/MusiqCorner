@@ -44,10 +44,11 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-
+<!--STARTS THE FIRST CRUDABLE RESOURCE -->
 <h1 class="sub-head text-center">Submissions</h1>
 <h2 class= "text-center"> Click here to post a new comment!</h2>
 <p class ="text-center"><a href="/comments/new" class="btn btn-default navbar-btn">New Comment</a></p>
+<!--DISPLAES THE USER DEFINED POSTS IN A ROW WITH THE NAME COMMENTS AND VIDEO LINK -->
 <div class="row">
 {{#each comments}}
   <div class="col-sm-3">
@@ -61,6 +62,7 @@
       <small>{{this.comment}}</small>
 
     <br>
+    <!-- EDIT AND DELETING SECTION FOR THE CRUDABLE RESOURCE-->
     <a class="btn btn-default navbar-btn" href="/comments/{{this._id}}/edit">Edit</a>
     <form method="POST" action="/comments/{{this._id}}?_method=DELETE">
       <button class="btn btn-default navbar-btn" type="submit">Delete</button>
