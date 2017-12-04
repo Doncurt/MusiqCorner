@@ -1,0 +1,9 @@
+<!-- ALLOWS FOR EDITING OF THE COMMENT FORM-->
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <legend>Edit posts</legend>
+    <form method="POST" action="/posts/{{posts._id}}?_method=PUT">
+  {{> posts-form }}
+</form>
+  </div>
+</div>

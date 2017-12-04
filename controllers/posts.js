@@ -5,38 +5,38 @@ var methodOverride = require('method-override')
 
   module.exports = (app) => {
     //CREATE
-    app.post('/comments', function (req, res) {
-      Comment.create(req.body, function(err, comments) {
-        res.redirect('/comments/' + comments._id);
+    app.post('/posts', function (req, res) {
+      Post.create(req.body, function(err, posts) {
+        res.redirect('/posts/' + posts._id);
       })
     })
 
     // SHOW
-    app.get('/comments/:id', function (req, res) {
-      Comment.findById(req.params.id).exec(function (err, comments) {
-        res.render('comments-show', {comments: comments});
+    app.get('/posts/:id', function (req, res) {
+      Post.findById(req.params.id).exec(function (err, posts) {
+        res.render('posts-show', {posts: posts});
       })
     });
 
     // EDIT
-    app.get('/comments/:id/edit', function (req, res) {
-      Comment.findById(req.params.id, function(err, comments) {
-        res.render('comments-edit', {comments: comments});
+    app.get('/posts/:id/edit', function (req, res) {
+      Post.findById(req.params.id, function(err, posts) {
+        res.render('posts-edit', {posts: posts});
       })
     })
     // override with POST having ?_method=DELETE or ?_method=PUT
     app.use(methodOverride('_method'))
 
     // UPDATE
-    app.put('/comments/:id', function (req, res) {
-      Comment.findByIdAndUpdate(req.params.id,  req.body, function(err, comments) {
-        res.redirect('/comments/' + comments._id);
+    app.put('/posts/:id', function (req, res) {
+      Post.findByIdAndUpdate(req.params.id,  req.body, function(err, posts) {
+        res.redirect('/posts/' + posts._id);
       })
     })
 
     // DELETE
-    app.delete('/comments/:id', function (req, res) {
-      Comment.findByIdAndRemove(req.params.id, function(err) {
+    app.delete('/posts/:id', function (req, res) {
+      Post.findByIdAndRemove(req.params.id, function(err) {
         res.redirect('/');
       })
     })
@@ -44,13 +44,13 @@ var methodOverride = require('method-override')
 
 
     app.get('/', function (req, res) {
-      Comment.find(function(err, comments) {
-        res.render('submission-index', {comments: comments});
+      Post.find(function(err, posts) {
+        res.render('posts-index', {posts: posts});
       })
     })
-    // New route for the new comments on the page
-    app.get('/comments/new', function (req, res) {
-      res.render('comments-new', {});
+    // New route for the new posts on the page
+    app.get('/posts/new', function (req, res) {
+      res.render('posts-new', {});
     })
     //New route for the about page
     app.get('/about', function (req, res) {
