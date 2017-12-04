@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <legend>Edit comments</legend>
+    <form method="POST" action="/comments/{{comments._id}}?_method=PUT">
+  {{> comments-form }}
+</form>
+  </div>
+</div>
