@@ -44,19 +44,15 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-
+<!--STARTS THE FIRST CRUDABLE RESOURCE -->
 <h1 class="sub-head text-center">Submissions</h1>
 <h2 class= "text-center"> Click here to post a new comment!</h2>
-<<<<<<< HEAD:views/posts-index.handlebars
-<p class ="text-center"><a href="/posts/new" class="btn btn-default navbar-btn">New Comment</a></p>
-<!--DISPLAES THE USER DEFINED POSTS IN A ROW WITH THE NAME posts AND VIDEO LINK -->
-=======
 <p class ="text-center"><a href="/comments/new" class="btn btn-default navbar-btn">New Comment</a></p>
->>>>>>> parent of ef51244... final commit after getting rid of section of register:views/submission-index.handlebars
+<!--DISPLAES THE USER DEFINED POSTS IN A ROW WITH THE NAME COMMENTS AND VIDEO LINK -->
 <div class="row">
-{{#each posts}}
+{{#each comments}}
   <div class="col-sm-3">
-    <a href="/posts/{{this._id}}">
+    <a href="/comments/{{this._id}}">
       <video width="320" height="240" controls>
   <source src="{{this.video}}" type="video/mp4">
   </video>
@@ -66,14 +62,9 @@
       <small>{{this.comment}}</small>
 
     <br>
-<<<<<<< HEAD:views/posts-index.handlebars
     <!-- EDIT AND DELETING SECTION FOR THE CRUDABLE RESOURCE-->
-    <a class="btn btn-default navbar-btn" href="/posts/{{this._id}}/edit">Edit</a>
-    <form method="POST" action="/posts/{{this._id}}?_method=DELETE">
-=======
     <a class="btn btn-default navbar-btn" href="/comments/{{this._id}}/edit">Edit</a>
     <form method="POST" action="/comments/{{this._id}}?_method=DELETE">
->>>>>>> parent of ef51244... final commit after getting rid of section of register:views/submission-index.handlebars
       <button class="btn btn-default navbar-btn" type="submit">Delete</button>
        </div>
 {{/each}}
